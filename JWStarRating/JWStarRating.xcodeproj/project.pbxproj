@@ -13,8 +13,8 @@
 		D4990F561A6FED210057C6EE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4990F551A6FED210057C6EE /* Images.xcassets */; };
 		D4990F591A6FED210057C6EE /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4990F571A6FED210057C6EE /* LaunchScreen.xib */; };
 		D4990F651A6FED210057C6EE /* JWStarRatingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4990F641A6FED210057C6EE /* JWStarRatingTests.swift */; };
-		D4990F711A6FEE050057C6EE /* JWStarRating.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4990F6F1A6FEE050057C6EE /* JWStarRating.swift */; };
-		D4990F721A6FEE050057C6EE /* JWStarRatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4990F701A6FEE050057C6EE /* JWStarRatingView.swift */; };
+		D4990F7A1A709CEA0057C6EE /* JWStarRating.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4990F781A709CEA0057C6EE /* JWStarRating.swift */; };
+		D4990F7B1A709CEA0057C6EE /* JWStarRatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4990F791A709CEA0057C6EE /* JWStarRatingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,8 +38,8 @@
 		D4990F5E1A6FED210057C6EE /* JWStarRatingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JWStarRatingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4990F631A6FED210057C6EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D4990F641A6FED210057C6EE /* JWStarRatingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JWStarRatingTests.swift; sourceTree = "<group>"; };
-		D4990F6F1A6FEE050057C6EE /* JWStarRating.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JWStarRating.swift; sourceTree = "<group>"; };
-		D4990F701A6FEE050057C6EE /* JWStarRatingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JWStarRatingView.swift; sourceTree = "<group>"; };
+		D4990F781A709CEA0057C6EE /* JWStarRating.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JWStarRating.swift; sourceTree = "<group>"; };
+		D4990F791A709CEA0057C6EE /* JWStarRatingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JWStarRatingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,7 +81,7 @@
 		D4990F4B1A6FED210057C6EE /* JWStarRating */ = {
 			isa = PBXGroup;
 			children = (
-				D4990F6E1A6FEE050057C6EE /* Classes */,
+				D4990F771A709CEA0057C6EE /* Classes */,
 				D4990F4E1A6FED210057C6EE /* AppDelegate.swift */,
 				D4990F501A6FED210057C6EE /* ViewController.swift */,
 				D4990F521A6FED210057C6EE /* Main.storyboard */,
@@ -117,13 +117,14 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		D4990F6E1A6FEE050057C6EE /* Classes */ = {
+		D4990F771A709CEA0057C6EE /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				D4990F6F1A6FEE050057C6EE /* JWStarRating.swift */,
-				D4990F701A6FEE050057C6EE /* JWStarRatingView.swift */,
+				D4990F781A709CEA0057C6EE /* JWStarRating.swift */,
+				D4990F791A709CEA0057C6EE /* JWStarRatingView.swift */,
 			);
-			path = Classes;
+			name = Classes;
+			path = ../../Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -226,8 +227,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D4990F721A6FEE050057C6EE /* JWStarRatingView.swift in Sources */,
-				D4990F711A6FEE050057C6EE /* JWStarRating.swift in Sources */,
+				D4990F7B1A709CEA0057C6EE /* JWStarRatingView.swift in Sources */,
+				D4990F7A1A709CEA0057C6EE /* JWStarRating.swift in Sources */,
 				D4990F511A6FED210057C6EE /* ViewController.swift in Sources */,
 				D4990F4F1A6FED210057C6EE /* AppDelegate.swift in Sources */,
 			);

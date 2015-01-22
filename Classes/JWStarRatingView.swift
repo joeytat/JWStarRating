@@ -10,22 +10,24 @@ import UIKit
 
 @IBDesignable class JWStarRatingView: UIView {
     
-    @IBInspectable var starColor: UIColor = UIColor.rgba(200, g: 200, b: 200, a: 1)
-    @IBInspectable var starHighlightColor: UIColor = UIColor.rgba(88, g: 88, b: 88, a: 1)
+    @IBInspectable var starColor: UIColor = UIColor(red: 200.0/255.0, green: 200.0/255.0, blue: 200.0/255.0, alpha: 1)
+    @IBInspectable var starHighlightColor: UIColor = UIColor(red: 88.0/255.0, green: 88.0/255.0, blue: 88.0/255.0, alpha: 1)
+    @IBInspectable var starCount:Int = 5
+    @IBInspectable var spaceBetweenStar:CGFloat = 10.0
     
     #if TARGET_INTERFACE_BUILDER
         override func willMoveToSuperview(newSuperview: UIView?) {
-        let starRating = JWStarRating(frame: self.bounds, starCount: 5, starColor: self.starColor, starHighlightColor: self.starHighlightColor, spaceBetweenStar: 10)
-        self.addSubview(starRating)
+        let starRating = JWStarRating(frame: self.bounds, starCount: self.starCount, starColor: self.starColor, starHighlightColor: self.starHighlightColor, spaceBetweenStar: self.spaceBetweenStar)
+        addSubview(starRating)
     }
     
     #else
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        let starRating = JWStarRating(frame: self.bounds, starCount: 5, starColor: self.starColor, starHighlightColor: self.starHighlightColor, spaceBetweenStar: 10)
+        let starRating = JWStarRating(frame: self.bounds, starCount: self.starCount, starColor: self.starColor, starHighlightColor: self.starHighlightColor, spaceBetweenStar: self.spaceBetweenStar)
         starRating.addTarget(self, action: "valueChanged:", forControlEvents: UIControlEvents.ValueChanged)
-        self.addSubview(starRating)
+        addSubview(starRating)
         
     }
     #endif

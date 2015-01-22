@@ -11,8 +11,8 @@ import UIKit
 class JWStarRating: UIControl {
     var spaceBetweenStar: CGFloat = 10
     var starCount: Int = 5
-    var starColor: UIColor = UIColor.rgba(200, g: 200, b: 200, a: 1)
-    var starHighlightColor: UIColor = UIColor.rgba(88, g: 88, b: 88, a: 1)
+    var starColor: UIColor = UIColor(red: 200.0/255.0, green: 200.0/255.0, blue: 200.0/255.0, alpha: 1)
+    var starHighlightColor: UIColor = UIColor(red: 88.0/255.0, green: 88.0/255.0, blue: 88.0/255.0, alpha: 1)
     
     var ratedStarIndex: Int = 3{
         didSet{
@@ -39,6 +39,11 @@ class JWStarRating: UIControl {
         self.spaceBetweenStar = spaceBetweenStar
     }
     
+    /**
+    Star's drawing code is based on the [Zaph's answer](http://stackoverflow.com/a/8446655/4251613)
+    
+    :param: rect CGRect
+    */
     override func drawRect(rect: CGRect) {
         
         starLocation.removeAll(keepCapacity: true)
@@ -104,7 +109,7 @@ class JWStarRating: UIControl {
         
         let lastPoint = touch.locationInView(self)
         hitStar(lastPoint)
-        self.sendActionsForControlEvents(UIControlEvents.ValueChanged)
+        sendActionsForControlEvents(.ValueChanged)
         return true
     }
     
@@ -113,6 +118,7 @@ class JWStarRating: UIControl {
         let touch = touches.anyObject() as UITouch
         let lastPoint = touch.locationInView(self)
         hitStar(lastPoint)
+        sendActionsForControlEvents(.ValueChanged)
     }
     
 }
