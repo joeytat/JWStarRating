@@ -118,6 +118,7 @@ class JWStarRating: UIControl {
         let touch = touches.anyObject() as UITouch
         let lastPoint = touch.locationInView(self)
         hitStar(lastPoint)
+        self.sendActionsForControlEvents(UIControlEvents.ValueChanged)
     }
     
 }
