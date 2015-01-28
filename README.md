@@ -9,7 +9,7 @@ A simple and easy to use star rating view. Written in Swift.
 
 JWStarRating is ```IBDesignable``` and ```IBInspectable``` so you can modify almost all properties in Interface Builder.
 <p align="center">
-	<img src="http://ww4.sinaimg.cn/mw1024/005yyi5Jjw1eohjghplqaj30oy06m75b.jpg" width="50%">
+	<img src="http://ww3.sinaimg.cn/large/005yyi5Jjw1eopb6hsvxkg30os0avmy0.gif" width="100%">&nbsp;
 </p>
 
 Star's drawing code is based on the [Zaph's answer](http://stackoverflow.com/a/8446655/4251613)
