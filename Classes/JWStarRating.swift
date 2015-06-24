@@ -113,9 +113,9 @@ class JWStarRating: UIControl {
         return true
     }
     
-    override func touchesEnded(touches: NSSet, withEvent event: UIEvent) {
+    override func touchesEnded(touches: Set<NSObject>, withEvent event: UIEvent) {
         super.touchesEnded(touches, withEvent: event)
-        let touch = touches.anyObject() as UITouch
+        let touch = touches.first as! UITouch
         let lastPoint = touch.locationInView(self)
         hitStar(lastPoint)
         sendActionsForControlEvents(.ValueChanged)
