@@ -22,7 +22,7 @@ class JWStarRating: UIControl {
 
     var starLocation: Array<CGFloat> = Array()
     
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
     
@@ -42,7 +42,7 @@ class JWStarRating: UIControl {
     /**
     Star's drawing code is based on the [Zaph's answer](http://stackoverflow.com/a/8446655/4251613)
     
-    :param: rect CGRect
+    - parameter rect: CGRect
     */
     override func drawRect(rect: CGRect) {
         
@@ -73,7 +73,6 @@ class JWStarRating: UIControl {
                 let x: CGFloat = r * sin(CGFloat(k) * theta)
                 let y: CGFloat = r * cos(CGFloat(k) * theta)
                 CGContextAddLineToPoint(context, x+xCenter, y*flip+yCenter)
-                let starXCenter = x+xCenter
             }
             starLocation.append(xCenter)
             xCenter += starSize + spaceBetweenStar * 1.5
@@ -86,11 +85,11 @@ class JWStarRating: UIControl {
     /**
     Check the touch point whether or not in the stars frame. If it is redraw.
     
-    :param: point Touch point
+    - parameter point: Touch point
     */
     private func hitStar(point: CGPoint) {
         let starSize = self.bounds.width / CGFloat(starCount) - spaceBetweenStar * 2
-        for var i = 0; i < starLocation.count; i++ {
+        for i in 0 ..< starLocation.count {
             let starXCenter = starLocation[i]
             if (point.x > starXCenter - starSize / 2) && (point.x < starXCenter + starSize / 2) {
                 ratedStarIndex = i + 1
@@ -99,12 +98,12 @@ class JWStarRating: UIControl {
         }
     }
     
-    override func beginTrackingWithTouch(touch: UITouch, withEvent event: UIEvent) -> Bool {
+    override func beginTrackingWithTouch(touch: UITouch, withEvent event: UIEvent?) -> Bool {
         super.beginTrackingWithTouch(touch, withEvent: event)
         return true
     }
     
-    override func continueTrackingWithTouch(touch: UITouch, withEvent event: UIEvent) -> Bool {
+    override func continueTrackingWithTouch(touch: UITouch, withEvent event: UIEvent?) -> Bool {
         super.continueTrackingWithTouch(touch, withEvent: event)
         
         let lastPoint = touch.locationInView(self)
@@ -113,10 +112,10 @@ class JWStarRating: UIControl {
         return true
     }
     
-    override func touchesEnded(touches: Set<NSObject>, withEvent event: UIEvent) {
+    override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
         super.touchesEnded(touches, withEvent: event)
-        let touch = touches.first as! UITouch
-        let lastPoint = touch.locationInView(self)
+        let touch = touches.first
+        let lastPoint = touch!.locationInView(self)
         hitStar(lastPoint)
         sendActionsForControlEvents(.ValueChanged)
     }
