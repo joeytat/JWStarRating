@@ -26,7 +26,7 @@ import UIKit
         super.awakeFromNib()
         
         let starRating = JWStarRating(frame: self.bounds, starCount: self.starCount, starColor: self.starColor, starHighlightColor: self.starHighlightColor, spaceBetweenStar: self.spaceBetweenStar)
-        starRating.addTarget(self, action: "valueChanged:", forControlEvents: UIControlEvents.ValueChanged)
+        starRating.addTarget(self, action: #selector(JWStarRatingView.valueChanged(_:)), forControlEvents: UIControlEvents.ValueChanged)
         addSubview(starRating)
         
     }
@@ -34,6 +34,6 @@ import UIKit
     
     func valueChanged(starRating:JWStarRating){
         // Do something with the value...
-        println("Value changed \(starRating.ratedStarIndex)")
+        print("Value changed \(starRating.ratedStarIndex)")
     }
 }
